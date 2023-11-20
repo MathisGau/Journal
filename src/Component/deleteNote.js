@@ -7,7 +7,7 @@ export const deleteNote = async (noteIndex) => {
         const existingNotes = await AsyncStorage.getItem(STORAGE_KEY);
         if (existingNotes) {
             const notes = JSON.parse(existingNotes);
-            notes.splice(noteIndex, 1); // Supprime la note à l'index spécifié
+            notes.splice(noteIndex, 1);
             await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(notes));
         }
     } catch (error) {
